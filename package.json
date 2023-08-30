@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node config.js",
-    "start": "node config.js && node b.js",
+    "start": "node b.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
