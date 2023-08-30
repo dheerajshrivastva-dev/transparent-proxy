@@ -4,6 +4,7 @@ const url = require('url');
 const RediSClient = require('./redis');
 const configObject = require("./config.json");
 
+
 const red = "\x1b[31m";
 const green = "\x1b[32m";
 const reset = "\x1b[0m";
@@ -58,7 +59,7 @@ const proxyTcpServer = net.createServer((clientSocket) => {
       Reject(`This call is being rejected for Domain: ${hostname} and call count is: ${pastDayCounter}`);
       clientSocket.end(); // Close the clientSocket
       totalRejected++;
-      Reject(`\nTOTAL REJECTED ==> ${totalRejected}\n`)
+      Reject(`TOTAL REJECTED ==> ${totalRejected}`)
       return;
     }
 
@@ -71,14 +72,27 @@ const proxyTcpServer = net.createServer((clientSocket) => {
         serverSocket.pipe(clientSocket);
       });
       totalPass++;
-      Success(`\nTOTAL Passed ==> ${totalPass}\n`)
+      Success(`TOTAL Passed ==> ${totalPass}`)
       Success(`This call is Approved for Domain: ${hostname} and call count is: ${pastDayCounter}`)
       // Listen for serverSocket's 'end' event to close the connection after response
       serverSocket.on('end', () => {
         clientSocket.end(); // Close the clientSocket
       });
+      serverSocket.on('error', (error) => {
+        console.error('Error in serverSocket:', error);
+        clientSocket.end(); // Close the clientSocket
+      });
     }
   });
+  clientSocket.on('error', (error) => {
+    console.error('Error in clientSocket:', error);
+    clientSocket.end(); // Close the clientSocket
+  });
+
+});
+
+proxyTcpServer.on('error', (error) => {
+  console.error('Error in proxyTcpServer:', error);
 });
 
 // Start the TCP proxy server
