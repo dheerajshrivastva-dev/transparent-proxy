@@ -1,0 +1,19 @@
+{
+  "name": "api-shield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node config.js",
+    "start": "node config.js && node b.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-errors": "^2.0.0",
+    "http-proxy": "^1.11.1",
+    "redis": "^4.6.8",
+    "transparent-proxy": "^1.13.3"
+  }
+}

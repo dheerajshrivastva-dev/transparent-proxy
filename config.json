@@ -1,0 +1,52 @@
+{
+  "catfact.ninja": {
+    "perSecondRule": true,
+    "perMinuteRule": true,
+    "perHourRule": true,
+    "perDayRule": true,
+    "maxAmountPerDay": 10.00,
+    "maxFreeRequestsPerDay": 150,
+    "maxFreeRequestsPerMinute": 10,
+    "costPerRequest": 0.01
+  },
+  "api.coindesk.com": {
+    "perSecondRule": false,
+    "perMinuteRule": true,
+    "perHourRule": true,
+    "perDayRule": true,
+    "maxAmountPerDay": 20.00,
+    "maxFreeRequestsPerDay": 4,
+    "maxFreeRequestsPerMinute": 17,
+    "costPerRequest": 0.02
+  },
+  "www.boredapi.com": {
+    "perSecondRule": false,
+    "perMinuteRule": false,
+    "perHourRule": true,
+    "perDayRule": true,
+    "maxAmountPerDay": 15.00,
+    "maxFreeRequestsPerDay": 360,
+    "maxFreeRequestsPerMinute": 11,
+    "costPerRequest": 0.015
+  },
+  "api.agify.io": {
+    "perSecondRule": false,
+    "perMinuteRule": false,
+    "perHourRule": false,
+    "perDayRule": true,
+    "maxAmountPerDay": 25.00,
+    "maxFreeRequestsPerDay": 10,
+    "maxFreeRequestsPerMinute": 3,
+    "costPerRequest": 0.02
+  },
+  "official-joke-api.appspot.com": {
+    "perSecondRule": false,
+    "perMinuteRule": false,
+    "perHourRule": false,
+    "perDayRule": true,
+    "maxAmountPerDay": null,
+    "maxFreeRequestsPerDay": 20,
+    "maxFreeRequestsPerMinute": 5,
+    "costPerRequest": null
+  }
+}

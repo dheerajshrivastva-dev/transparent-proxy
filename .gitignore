@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.eslintcache
+
+.vscode/
+
+# Shared
+/packages/shared/node_modules
+
+# Web
+
+/packages/web/.env
+
+# testing
+/packages/web/coverage
+
+# production
+/packages/web/build
+/packages/web/node_modules
+/packages/web/build-storybook.log
+/packages/web/queries
+/packages/web/yarn.lock
+packages/native/example/android/app/build/*
+packages/native/android/build/*
